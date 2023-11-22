@@ -8,6 +8,7 @@ import React, { Component } from 'react'
 export class App extends Component {
   constructor() {
     super();
+    //Implementation of state object
     this.state = {
       fullName: 'Chukwubuikem Justin Ofodile ',
       bio: 'IT Specialty',
@@ -18,6 +19,7 @@ export class App extends Component {
     }
   }
 
+  //Function for count increamentation and show checks and update
   increamentCount = () => {
     if (this.state.show === true) {
       this.setState({
@@ -33,6 +35,7 @@ export class App extends Component {
   render() {
     return (
       <div className='container pt-5'>
+        {/* Condition that checks and displays details accordingly */}
         {this.state.show ? <Card style={{ width: '18rem' }}>
           <Card.Img width={300} height={350} variant="top" src={this.state.imgSrc} />
           <Card.Body>
@@ -45,6 +48,7 @@ export class App extends Component {
             </Card.Text>
           </Card.Body>
         </Card> : <h1>Nothing to show</h1>}
+        {/* button that toggles between show  */}
         <Button className='mt-3' onClick={this.increamentCount} variant="primary">Toggle View {this.state.count}</Button>
       </div>
     )
